@@ -19,12 +19,10 @@ class LocalConfig(Config):
     PROJ_RELOAD: bool = True
 
 
-@dataclass
+# @dataclass
 class ProdConfig(Config):
     PROJ_RELOAD: bool = False
 
-print('실행')
-print(LocalConfig())
 
 def conf():
     """
@@ -33,8 +31,9 @@ def conf():
     """
     config = dict(prod=ProdConfig(), local=LocalConfig())
     return config.get(environ.get("API_ENV", "local"))
-'''
 
+
+'''
 dataclass decorator는 적용되는 클래스의 정보를 딕셔너리로 사용하기 위해서입니다. 
 폴더 및 파일 구조 변경시, 해당 파일을 기점으로 각 모듈, 패키지들을 쉽게 참조하기 위함임.
 
