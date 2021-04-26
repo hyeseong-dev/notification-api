@@ -1,3 +1,10 @@
+# cache files and env's setup-file of vscode
 __pycache__/
 *.pyc
 .vscode/
+
+# environemntal folders
+.venv/
+venv/
+.env/
+env/
